@@ -1,1 +1,408 @@
-hello Deloitte
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deloitte &amp; Google Cloud | CFO AI Masterclass – Handout Guides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0b0d0e; --ink:#1b1f23; --muted:#5b6670; --bg:#f4f6f3; --surface:#fff; --border:#e2e6e1;
+  --dgreen:#86bc25; --dgreen-dark:#4f7a12; --dgreen-soft:#eef6e0;
+  --g-blue:#4285f4; --g-red:#ea4335; --g-yellow:#fbbc04; --g-green:#34a853;
+  --radius:14px; --shadow:0 1px 3px rgba(16,24,40,.07),0 8px 24px rgba(16,24,40,.05);
+  --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;font-size:15px}
+a{color:inherit}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.hero{background:var(--black);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:5px;
+  background:linear-gradient(90deg,var(--g-blue) 0 25%,var(--g-red) 25% 50%,var(--g-yellow) 50% 75%,var(--g-green) 75% 100%)}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(134,188,37,.28),transparent 65%)}
+.hero-inner{position:relative;padding:40px 0 48px}
+.brand-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.deloitte{font-weight:800;font-size:24px;letter-spacing:-.5px}
+.deloitte span{color:var(--dgreen)}
+.x{color:#7b858d;font-weight:500}
+.gcloud{font-weight:600;font-size:20px;display:flex;align-items:center;gap:8px}
+.gdots{display:inline-flex;gap:3px}
+.gdots i{width:8px;height:8px;border-radius:50%;display:block}
+.event-chip{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.22);padding:6px 12px;border-radius:999px;color:#d6dbd1}
+.event-chip b{color:var(--dgreen)}
+.eyebrow{color:var(--dgreen);font-weight:700;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;margin:0 0 8px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:0 0 12px;letter-spacing:-.8px}
+.hero p.sub{margin:0;color:#c3c9c0;font-size:17px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:8px;overflow-x:auto}
+.nav a{display:flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;font-size:13px;font-weight:600;
+  padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--ink);transition:.15s}
+.nav a:hover{border-color:var(--dgreen);background:var(--dgreen-soft)}
+.nav a:focus-visible{outline:2px solid var(--dgreen);outline-offset:2px}
+.nav .dot{width:8px;height:8px;border-radius:50%}
+
+main{padding:32px 0 56px}
+
+/* Handout */
+.handout{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  margin-bottom:32px;overflow:hidden;border-top:5px solid var(--accent)}
+.h-head{padding:28px 28px 20px;display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid var(--border)}
+.h-icon{flex:0 0 auto;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:28px;background:var(--accent-soft)}
+.h-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-ink);margin:0 0 2px}
+.h-head h2{margin:0;font-size:clamp(20px,3vw,26px);line-height:1.25;letter-spacing:-.3px}
+.h-head .tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--muted)}
+
+.steps{list-style:none;margin:0;padding:24px 28px 28px;position:relative}
+.step{position:relative;padding-left:56px;padding-bottom:24px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:19px;top:40px;bottom:0;width:2px;background:var(--border)}
+.step:last-child::before{display:none}
+.num{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  font-weight:800;font-size:15px;background:var(--black);color:#fff;box-shadow:0 0 0 4px var(--accent-soft)}
+.step h3{margin:6px 0 10px;font-size:17px}
+.step h3 small{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent-ink);margin-bottom:2px}
+.step ul{margin:0;padding-left:18px}
+.step li{margin:6px 0}
+.step li::marker{color:var(--dgreen)}
+.step ul ul{margin-top:6px}
+.step ul ul li::marker{color:var(--muted)}
+.ui{display:inline-block;font-weight:600;background:#f1f3f0;border:1px solid var(--border);border-radius:6px;padding:0 7px;font-size:.92em;white-space:nowrap}
+.link{color:var(--dgreen-dark);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.link:hover{color:var(--black)}
+.eg{color:var(--muted)}
+
+/* Prompt box */
+.prompt{margin:12px 0 4px;border-radius:12px;background:var(--black);color:#e8ece5;overflow:hidden;border:1px solid #20262b}
+.prompt-head{display:flex;align-items:center;gap:8px;padding:8px 14px;background:#151a1e;font-size:11px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;color:#9aa49a;border-bottom:1px solid #232a30}
+.prompt-head i{width:8px;height:8px;border-radius:50%;background:var(--dgreen)}
+.prompt pre{margin:0;padding:16px 18px;font-family:var(--mono);font-size:13px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.prompt pre .hl{color:var(--dgreen);font-weight:500}
+.tabs-demo{display:inline-flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.tabs-demo span{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--border);background:#fff}
+
+/* Accents */
+.h1{--accent:var(--g-blue);--accent-soft:#e8f0fe;--accent-ink:#1a5fd0}
+.h2{--accent:var(--g-green);--accent-soft:#e6f4ea;--accent-ink:#1e7e3a}
+.h3{--accent:var(--g-yellow);--accent-soft:#fef7e0;--accent-ink:#9a6b00}
+.h4{--accent:var(--g-red);--accent-soft:#fce8e6;--accent-ink:#c5221f}
+
+footer{background:var(--black);color:#9aa39a;font-size:13px;padding:24px 0;text-align:center}
+footer b{color:#fff}
+footer span{color:var(--dgreen)}
+
+@media (max-width:640px){
+  .h-head{padding:22px 18px 16px}
+  .steps{padding:20px 18px 22px}
+  .step{padding-left:48px}
+  .num{width:34px;height:34px;font-size:14px}
+  .step::before{left:16px;top:34px}
+  .event-chip{margin-left:0}
+  .ui{white-space:normal}
+}
+</style>
+<style data-link-removed-style>a[data-link-removed],a[href*="zPythonSafez"]:not([onclick]){pointer-events:none!important;cursor:default!important;opacity:.6}</style></head>
+<body>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="brand-row">
+      <div class="deloitte">Deloitte<span>.</span></div>
+      <div class="x">&amp;</div>
+      <div class="gcloud"><span class="gdots"><i style="background:var(--g-blue)"></i><i style="background:var(--g-red)"></i><i style="background:var(--g-yellow)"></i><i style="background:var(--g-green)"></i></span>Google Cloud</div>
+      <div class="event-chip"><b>Deloitte Colace 2026</b> · Taj Cidade de Goa Horizon, Goa</div>
+    </div>
+    <p class="eyebrow">Deloitte &amp; Google Cloud</p>
+    <h1>CFO AI Masterclass</h1>
+    <p class="sub">Step-by-Step Handout Guides</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Handouts">
+  <div class="container">
+    <ul>
+      <li><a href="#h1"><span class="dot" style="background:var(--g-blue)"></span>1 · NotebookLM</a></li>
+      <li><a href="#h2"><span class="dot" style="background:var(--g-green)"></span>2 · No-Code Agents</a></li>
+      <li><a href="#h3"><span class="dot" style="background:var(--g-yellow)"></span>3 · Agent Scheduler</a></li>
+      <li><a href="#h4"><span class="dot" style="background:var(--g-red)"></span>4 · Deep Research</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- Handout 1 -->
+  <section class="handout h1" id="h1">
+    <div class="h-head">
+      <div class="h-icon" aria-hidden="true">📄</div>
+      <div>
+        <p class="h-label">Handout 1</p>
+        <h2>Google NotebookLM</h2>
+        <span class="tag">Grounded Intelligence</span>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="num">1</span>
+        <h3><small>Step 1</small>Sign In &amp; Open</h3>
+        <ul>
+          <li>Open your browser.</li>
+          <li>Navigate to <a class="link" rel="noopener" data-link-removed aria-disabled="true" role="link" title="Link removed: its address didn't come from this conversation.">notebooklm.google.com</a>.</li>
+          <li>Sign in using your corporate Google Workspace account.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">2</span>
+        <h3><small>Step 2</small>Create Notebook</h3>
+        <ul>
+          <li>Click <span class="ui">+ New Notebook</span>.</li>
+          <li>Enter a clear title for your project <span class="eg">(e.g., "FY26 Budget Variance Analysis")</span>.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">3</span>
+        <h3><small>Step 3</small>Upload Sources</h3>
+        <ul>
+          <li>Click <span class="ui">Add + Sources</span>.</li>
+          <li>Select files from Google Drive (Docs, Sheets), upload PDFs/text from your laptop, or paste URLs (up to 50 sources).</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">4</span>
+        <h3><small>Step 4</small>Ask Questions</h3>
+        <ul>
+          <li>Type your question in the chat box at the bottom <span class="eg">(e.g., "What caused travel expenses to increase in Q2?")</span>.</li>
+          <li>View cited source excerpts.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">5</span>
+        <h3><small>Step 5</small>Pin &amp; Save Notes</h3>
+        <ul>
+          <li>Click the <span class="ui">Pin</span> icon on any answer to save it as a permanent note on your project canvas.</li>
+          <li>Click <span class="ui">+ Add Note</span> to write your own.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">6</span>
+        <h3><small>Step 6</small>Audio Overview</h3>
+        <ul>
+          <li>Open the <span class="ui">Notebook Guide</span> panel on the right.</li>
+          <li>Click <span class="ui">Generate now</span> under <span class="ui">Audio Overview</span> to make a 2-host audio podcast summarizing your files.</li>
+          <li>Click <span class="ui">Generate now</span> under <span class="ui">Slide Deck</span> to make a PPT presentation summarizing your files.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Handout 2 -->
+  <section class="handout h2" id="h2">
+    <div class="h-head">
+      <div class="h-icon" aria-hidden="true">🤖</div>
+      <div>
+        <p class="h-label">Handout 2</p>
+        <h2>Gemini Enterprise No-Code Agents</h2>
+        <span class="tag">Workflow Builder</span>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="num">1</span>
+        <h3><small>Step 1</small>Open Agent Designer</h3>
+        <ul>
+          <li>Sign in to Gemini Enterprise at <a class="link" rel="noopener" data-link-removed aria-disabled="true" role="link" title="Link removed: its address didn't come from this conversation.">business.gemini.google</a>.</li>
+          <li>If it asks for <span class="ui">Connect to Google Workspace apps?</span>, click connect for all stores (Gmail, Gchat, Drive, Calendar) and click <span class="ui">Continue</span>.</li>
+          <li>In the left menu, click <span class="ui">Agents</span>.</li>
+          <li>Click <span class="ui">+ Create Agent</span> to open Workflow Builder.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">2</span>
+        <h3><small>Step 2</small>Define Instructions</h3>
+        <ul>
+          <li>In the setup pane, describe the agent's job in plain English:</li>
+        </ul>
+        <div class="prompt">
+          <div class="prompt-head"><i></i>Agent instructions</div>
+<pre>You are the Executive Personal Assistant to the CFO.
+
+1. When asked about financial performance or reports, search Google Drive and present key metrics, Latest reports in structured tables and answer as per that only.
+
+2. Use Google Chat, Google Drive and Gmail to look up stakeholder context and discussions.
+
+3. Propose professional email drafts with clear To, Cc, Subject, and summary content.
+
+4. Never send emails directly—always ask for confirmation before saving as a draft in Gmail.</pre>
+        </div>
+      </li>
+      <li class="step"><span class="num">3</span>
+        <h3><small>Step 3</small>Test in Preview</h3>
+        <ul>
+          <li>In the right-side <span class="ui">Preview</span> sandbox, type sample questions <span class="eg">(e.g., "how was my last quater results")</span>.</li>
+          <li>Verify its reasoning and calculations.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">4</span>
+        <h3><small>Step 4</small>Create &amp; Chat</h3>
+        <ul>
+          <li>Click <span class="ui">Create</span>.</li>
+          <li>When the pop-up comes up asking <span class="ui">chat with the Agent</span>, click that.</li>
+          <li>Start asking questions related to docs and files available in your Gmail &amp; Google Drive.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Handout 3 -->
+  <section class="handout h3" id="h3">
+    <div class="h-head">
+      <div class="h-icon" aria-hidden="true">📅</div>
+      <div>
+        <p class="h-label">Handout 3</p>
+        <h2>Gemini Enterprise Agent Scheduler</h2>
+        <span class="tag">Recurring, automated agent runs</span>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="num">1</span>
+        <h3><small>Step 1</small>Open Target Agent</h3>
+        <ul>
+          <li>Open your published agent in edit mode in Gemini Enterprise.
+            <ul>
+              <li>Click <span class="ui">Agents</span> on the left side bar of <a class="link" rel="noopener" data-link-removed aria-disabled="true" role="link" title="Link removed: its address didn't come from this conversation.">business.gemini.google</a>. Under the tab <span class="ui">Your Agents</span>, click the three dots on your created agent and click edit (pencil).</li>
+              <li>On the right-hand side panel of your agent window you will see three tabs:
+                <div class="tabs-demo"><span>Flow</span><span>Schedule</span><span>Preview</span></div>
+              </li>
+            </ul>
+          </li>
+          <li>Click the <span class="ui">Schedule</span> tab on the chat agent builder canvas.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">2</span>
+        <h3><small>Step 2</small>Set Time &amp; Cadence</h3>
+        <ul>
+          <li>Click <span class="ui">+ Add schedule</span>.</li>
+          <li>Select Repeat frequency: <span class="ui">Daily</span>, <span class="ui">Weekly</span>, or <span class="ui">Monthly</span>.</li>
+          <li>Choose the specific day <span class="eg">(e.g., "minutes" or "Weekly on Monday")</span>.</li>
+          <li>Choose the run time <span class="eg">(e.g., "15min", "06:30 AM")</span>.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">3</span>
+        <h3><small>Step 3</small>Enter Recurring Task</h3>
+        <ul>
+          <li>Type the exact prompt:</li>
+        </ul>
+        <div class="prompt">
+          <div class="prompt-head"><i></i>Scheduled prompt</div>
+<pre>Pull bank cash balances from master sheet, compare with weekly forecast, and summarize net cash position.</pre>
+        </div>
+        <ul>
+          <li>Click <span class="ui">Update</span> to activate.</li>
+          <li>Review scheduled runs in the <span class="ui">Chats</span> section.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Handout 4 -->
+  <section class="handout h4" id="h4">
+    <div class="h-head">
+      <div class="h-icon" aria-hidden="true">🔍</div>
+      <div>
+        <p class="h-label">Handout 4</p>
+        <h2>Gemini Enterprise Deep Research</h2>
+        <span class="tag">Autonomous, cited research reports</span>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="num">1</span>
+        <h3><small>Step 1</small>Open Deep Research</h3>
+        <ul>
+          <li>Sign in to Gemini Enterprise (<a class="link" rel="noopener" data-link-removed aria-disabled="true" role="link" title="Link removed: its address didn't come from this conversation.">business.gemini.google</a>).</li>
+          <li>In the app navigation panel (≡), select <span class="ui">Deep Research</span> (or pin it from Agents).</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">2</span>
+        <h3><small>Step 2</small>Enter Research Question</h3>
+        <ul>
+          <li>Type your research-related prompt:</li>
+        </ul>
+        <div class="prompt">
+          <div class="prompt-head"><i></i>Deep Research prompt</div>
+<pre>Act as a strategic advisor to a CFO preparing the FY2027 plan. As of November 2026, produce a deep-research report titled:
+
+<span class="hl">"Agentic AI in Finance: Separating Real ROI from Hype — A CFO Playbook for FY2027"</span>
+
+Research and cover:
+
+<span class="hl">1. CURRENT STATE (Nov 2026)</span>
+   - Adoption rates of AI agents in finance (close, AP/AR, reconciliation, FP&amp;A, treasury, tax)
+   - Latest CFO surveys on confidence, AI priorities, and budget shifts
+   - Failure/cancellation rates of agentic AI pilots and the root causes
+
+<span class="hl">2. ROI EVIDENCE</span>
+   - Quantified benchmarks: close-cycle reduction, cost per transaction, forecast accuracy, DSO/working capital impact
+   - Separate vendor-claimed vs. independently validated results
+   - Full total cost of ownership: data infrastructure, agent execution/tool-call costs, human oversight, governance
+
+<span class="hl">3. MACRO &amp; RISK CONTEXT</span>
+   - Interest rates, inflation, demand outlook, geopolitical and supply chain risk
+   - Regulatory/tax pressure (e.g., Pillar Two, AI regulation, data sovereignty)
+   - Cybersecurity and AI-governance risks specific to finance agents
+
+<span class="hl">4. DECISION FRAMEWORK</span>
+   - Which 3 finance workflows to automate first, and why (impact vs. risk vs. data readiness)
+   - Clear go/no-go criteria and ROI thresholds to scale a pilot
+   - 90-day, 6-month, and 12-month roadmap
+   - KPIs to report to the CEO and board
+
+<span class="hl">5. TALENT &amp; OPERATING MODEL</span>
+   - Skills the finance team needs, upskilling vs. hiring, and the junior "experience gap"
+
+<span class="hl">OUTPUT FORMAT:</span>
+- 1-page executive summary with the 5 most important recommendations up front
+- Tables for benchmarks and the comparison of workflow priorities
+- A "Risks &amp; Mitigations" section
+- A board-ready slide outline (5 slides)
+- Cite every statistic with source and date; flag any data older than 12 months</pre>
+        </div>
+        <ul>
+          <li>Click <span class="ui">Submit</span>.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">3</span>
+        <h3><small>Step 3</small>Review Research Plan</h3>
+        <ul>
+          <li>Allow Deep Research to assess the prompt and generate an outline plan showing research steps.</li>
+          <li>Edit the plan to add or remove subtopics.</li>
+          <li>Click <span class="ui">Start Research</span>.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">4</span>
+        <h3><small>Step 4</small>Run Autonomous Search</h3>
+        <ul>
+          <li>Allow Deep Research to run the steps from the outline.</li>
+          <li>Stream real-time findings as they are generated.</li>
+          <li>View the displayed responses as they progress.</li>
+        </ul>
+      </li>
+      <li class="step"><span class="num">5</span>
+        <h3><small>Step 5</small>Review &amp; Export</h3>
+        <ul>
+          <li>Allow the system to complete processing and produce a detailed report with citations and a 2-minute Audio Summary.</li>
+          <li>Click <span class="ui">Export to Google Docs</span> to share with leadership.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container"><b>Deloitte<span>.</span> &amp; Google Cloud</b> · CFO AI Masterclass · Deloitte Colace 2026 · Taj Cidade de Goa Horizon, Goa</div>
+</footer>
+
+</body>
+</html>
